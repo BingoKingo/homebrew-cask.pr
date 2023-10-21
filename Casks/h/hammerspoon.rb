@@ -33,6 +33,8 @@ cask "hammerspoon" do
 
   app "Hammerspoon.app"
 
+  bin.install_symlink "#{appdir}/Hammerspoon.app/Contents/Frameworks/hs/hs"
+
   uninstall quit: "org.hammerspoon.Hammerspoon"
 
   zap trash: [
