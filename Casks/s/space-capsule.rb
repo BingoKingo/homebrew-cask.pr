@@ -1,6 +1,6 @@
 cask "space-capsule" do
-  version "1.13"
-  sha256 "9339aacf007fe651947b449f205f25e2490efc8a7a7fb69f572b2f7d3a275111"
+  version "1.15"
+  sha256 "620f6a8d717e29c76fc02710dc6ad6aebd4d46a6b3f5a211797cdb9856b7e94e"
 
   url "https://spacecapsule.app/downloads/Space%20Capsule%20#{version}.dmg"
   name "Space Capsule"

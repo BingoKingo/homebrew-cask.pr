@@ -1,6 +1,6 @@
 cask "gzdoom" do
-  version "4.11.3"
-  sha256 "4edfa387b74a116d8335d9c6c5f1f84d9e1cad342b07c0d7707dcc87cf0c6ed1"
+  version "4.12.2"
+  sha256 "3903827fcd8a81053f504fc1bfc55d4eba16b2651029b85b4284e51f0709bff6"
 
   url "https://github.com/ZDoom/gzdoom/releases/download/g#{version}/gzdoom-#{version.dots_to_hyphens}-macOS.zip"
   name "GZDoom"
@@ -13,4 +13,6 @@ cask "gzdoom" do
   end
 
   app "GZDoom.app"
+
+  zap trash: "~/Library/Preferences/gzdoom.ini"
 end

@@ -1,18 +1,18 @@
 cask "capacities" do
   arch arm: "-arm64"
 
-  version "1.35.1"
-  sha256 arm:   "b3ef5478b0ac5668f1734ded9aee8ba7321ebeb5e12a257988ecb03836dd9c89",
-         intel: "fd3e1da2da07c9484cf6a50920804e06b6a48762a090563c52523b8905c5c6fe"
+  version "1.38.1"
+  sha256 arm:   "84f9c6ada786a7d461f33f93e055ac7e2cdb7e8c76ca54ffb200b400f97f0648",
+         intel: "591d973eaa12d2fcfa97f9eafec0de98760891696476f985b102ce2bbe8a75d3"
 
-  url "https://capacities-frontend-app.s3.eu-central-1.amazonaws.com/Capacities-#{version}#{arch}.dmg",
-      verified: "capacities-frontend-app.s3.eu-central-1.amazonaws.com/"
+  url "https://capacities-frontend-app.s3.amazonaws.com/Capacities-#{version}#{arch}.dmg",
+      verified: "capacities-frontend-app.s3.amazonaws.com/"
   name "Capacities"
   desc "App to write and organise your ideas"
   homepage "https://capacities.io/"
 
   livecheck do
-    url "https://capacities-frontend-app.s3.eu-central-1.amazonaws.com/latest-mac.yml"
+    url "https://capacities-frontend-app.s3.amazonaws.com/latest-mac.yml"
     strategy :electron_builder
   end
 

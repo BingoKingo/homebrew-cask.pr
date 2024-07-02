@@ -1,9 +1,9 @@
 cask "webstorm" do
   arch arm: "-aarch64"
 
-  version "2023.3.6,233.15026.13"
-  sha256 arm:   "ea8262e07318b894f0019003b2df1038d647db0335904d8996827ddaf633c39a",
-         intel: "03220e45e5308664d2c413eb1b928daf6f5b3600305526d0dd230b084bdfbb9c"
+  version "2024.1.5,241.18034.50"
+  sha256 arm:   "e55e4671316ad2c2bfc5564516e261b59d139267c18d06d7a62b8f665d86da5e",
+         intel: "45475fda7a66ba5da23091a7d9ec3314c9482b0a31fe9cc40a3a02f243c86e48"
 
   url "https://download.jetbrains.com/webstorm/WebStorm-#{version.csv.first}#{arch}.dmg"
   name "WebStorm"
@@ -27,11 +27,13 @@ cask "webstorm" do
 
   zap trash: [
     "~/Library/Application Support/JetBrains/WebStorm#{version.major_minor}",
+    "~/Library/Caches/com.apple.nsurlsessiond/Downloads/com.jetbrains.WebStorm",
     "~/Library/Caches/JetBrains/WebStorm#{version.major_minor}",
     "~/Library/Logs/JetBrains/WebStorm#{version.major_minor}",
     "~/Library/Preferences/com.jetbrains.WebStorm.plist",
     "~/Library/Preferences/jetbrains.webstorm.*.plist",
     "~/Library/Preferences/WebStorm#{version.major_minor}",
+    "~/Library/Preferences/webstorm.plist",
     "~/Library/Saved Application State/com.jetbrains.WebStorm.savedState",
   ]
 end

@@ -1,9 +1,9 @@
 cask "poe" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.17"
-  sha256 arm:   "70cf6c0cb1d41cd9cc11c7e32390f4ba1b2ca4fd3b0132d590f657cbeb739c54",
-         intel: "fba9bbe3dd224706405a34350a84773dbd5262c248716d6bfb2ca7931b1fbf49"
+  version "1.1.21"
+  sha256 arm:   "32cf5c8a501e17eb94146064896b26645406f6d8eb34ffd484ef94f78c4299d7",
+         intel: "64638411482a2ce74b9c2a9c02b549c06bae257d2ea6d06cea2e7da72fbc3303"
 
   url "https://desktop-app.poecdn.net/updates/darwin_#{arch}/#{version}.zip",
       verified: "desktop-app.poecdn.net/updates/"
@@ -20,6 +20,8 @@ cask "poe" do
   app "Poe.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.quora.poe.electron.sfl*",
+    "~/Library/Application Support/Poe",
     "~/Library/Application Support/poe-electron",
     "~/Library/Caches/com.quora.poe.electron",
     "~/Library/Caches/com.quora.poe.electron.ShipIt",

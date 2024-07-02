@@ -13,7 +13,7 @@ cask "beyond-compare" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/beyond-compare-beta"
+  conflicts_with cask: "beyond-compare@beta"
 
   app "Beyond Compare.app"
   binary "#{appdir}/Beyond Compare.app/Contents/MacOS/bcomp"
@@ -27,4 +27,8 @@ cask "beyond-compare" do
     "~/Library/Preferences/com.ScooterSoftware.BeyondCompare.plist",
     "~/Library/Saved Application State/com.ScooterSoftware.BeyondCompare.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

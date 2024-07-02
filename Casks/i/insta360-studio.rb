@@ -1,6 +1,6 @@
 cask "insta360-studio" do
-  version "5.0.0,RC_build171,6500b773e9cbaba798d5cb936351537c,20240326_025731_signed_1711393131783"
-  sha256 "8ebf85712157d2955c3e7bb0a68440dd1077866ae574ad2e2e398be2bcfa6be3"
+  version "5.2.0,RC_build30,84acf671bafadec72df1d4df6dc7d2d2,20240612_173040_signed_1718184717294"
+  sha256 "5ba0f747de63a6d937c83e4d2e990e04e5b3890b20e7cd5fdb7f84ba8731e77d"
 
   url "https://file.insta360.com/static/#{version.csv.third}/Insta360Studio_#{version.csv.first}(#{version.csv.second})_#{version.csv.fourth}.pkg"
   name "Insta360 Studio"
@@ -11,7 +11,7 @@ cask "insta360-studio" do
     url "https://openapi.insta360.com/app/appDownload/getGroupApp?group=insta360-go2&X-Language=en-us"
     regex(%r{
       /(\h+)/
-      Insta360Studio
+      Insta360(?:%20)?Studio
       (?:[._-]|%20)(?:\d+(?:\.\d+)+)
       (?:[._-]?\(([^)]+?)\))?
       [._-](\d+(?:[._-](?:\d+|signed))*)
@@ -19,7 +19,7 @@ cask "insta360-studio" do
     }ix)
     strategy :json do |json, regex|
       # Find the Insta360 Studio app
-      app = json.dig("data", "apps")&.find { |item| item["id"] == 38 }
+      app = json.dig("data", "apps")&.find { |item| item["app_id"] == 38 }
       next if app.blank?
 
       # Find the newest macOS version

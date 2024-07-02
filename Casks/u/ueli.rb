@@ -1,8 +1,11 @@
 cask "ueli" do
-  version "8.28.0"
-  sha256 "141329ff2528ea24ed39b66e9836b678d383c697ab7a5564ffec6651d45610ef"
+  arch arm: "-arm64"
 
-  url "https://github.com/oliverschwendener/ueli/releases/download/v#{version}/ueli-#{version}.dmg",
+  version "9.0.1"
+  sha256 intel: "4c17bdee3365ebd76801fbfbc45e9895119aeff604f53059cba2d930c9ed3b5d",
+         arm:   "7e81deb4815f7d9b4904ca02572202ca0d5af6da3f356d49606ead43d72f75cb"
+
+  url "https://github.com/oliverschwendener/ueli/releases/download/v#{version}/Ueli-#{version}#{arch}.dmg",
       verified: "github.com/oliverschwendener/ueli/"
   name "Ueli"
   desc "Keystroke launcher"

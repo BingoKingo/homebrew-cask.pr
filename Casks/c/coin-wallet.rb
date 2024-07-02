@@ -1,6 +1,6 @@
 cask "coin-wallet" do
-  version "6.2.0"
-  sha256 "9e860e156865572182a3bdc7f114ed16e89dfbfb55f70de649c70a93eca44781"
+  version "6.4.1"
+  sha256 "03648125f7f169e445b56fbf3b181f4e7d042e54f89dab2864f0c9ec3bfcd07d"
 
   url "https://github.com/CoinSpace/CoinSpace/releases/download/v#{version}/Coin-Wallet.dmg",
       verified: "github.com/CoinSpace/CoinSpace/"
@@ -19,4 +19,8 @@ cask "coin-wallet" do
     "~/Library/Preferences/com.coinspace.wallet*.plist",
     "~/Library/Saved Application State/com.coinspace.wallet.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

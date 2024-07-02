@@ -1,6 +1,7 @@
 cask "mplab-xc32" do
-  version "4.35"
-  sha256 "f4664a269b873ae72572924fb5525979fa60a399c1d6ecc8fc196833013b79c2"
+  # NOTE: "32" is not a version number, but an intrinsic part of the product name
+  version "4.45"
+  sha256 "d39a0c746e4959a26e85c22d43e2dd8cd9ec4cee6a0fb7b2cd03ccdaed7a0658"
 
   url "https://ww1.microchip.com/downloads/aemDocuments/documents/DEV/ProductDocuments/SoftwareTools/xc32-v#{version}-full-install-osx-installer.dmg"
   name "MPLab XC32 Compiler"
@@ -9,8 +10,10 @@ cask "mplab-xc32" do
 
   livecheck do
     url "https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc32"
-    regex(%r{href=.*?ProductDocuments/SoftwareTools/xc32[._-]v?(\d+(?:\.\d+)+)-full-install-osx-installer\.dmg}i)
+    regex(%r{href=.*?SoftwareTools/xc32[._-]v?(\d+(?:\.\d+)+)[._-]full[._-]install[._-]osx[._-]installer\.dmg}i)
   end
+
+  depends_on arch: :x86_64
 
   installer script: {
     executable: "xc32-v#{version}-osx-installer.app/Contents/MacOS/installbuilder.sh",
@@ -54,4 +57,6 @@ cask "mplab-xc32" do
     args:       ["--mode", "unattended"],
     sudo:       true,
   }
+
+  # No zap stanza required
 end

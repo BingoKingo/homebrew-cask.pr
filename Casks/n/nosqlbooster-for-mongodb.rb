@@ -1,6 +1,6 @@
 cask "nosqlbooster-for-mongodb" do
-  version "8.1.8"
-  sha256 "dc8e084e7d73c166c7d53055c834e4c12b485030c958db6ef4d70a364361eff1"
+  version "9.0.0"
+  sha256 "2da332a7dd215c436a51bc82f7792c4bf2db544778621632ae6d94b056bafac2"
 
   url "https://s3.nosqlbooster.com/download/releasesv#{version.major}/nosqlbooster4mongo-#{version}.dmg"
   name "NoSQLBooster for MongoDB"
@@ -20,4 +20,8 @@ cask "nosqlbooster-for-mongodb" do
     "~/Library/Preferences/com.nosqlbooster.mongodb.plist",
     "~/Library/Saved Application State/com.nosqlbooster.mongodb.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

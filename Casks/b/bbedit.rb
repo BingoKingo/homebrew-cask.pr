@@ -1,6 +1,6 @@
 cask "bbedit" do
-  version "15.0.2"
-  sha256 "fd5adbcd4f0ff6edbbe5147c0cc1795d5226a9436ebea586312b4711d3cdcd18"
+  version "15.1.1"
+  sha256 "d60ebc73634a4506e6f54a96bb144caaded30565a17c99a0a8524cb18cb13b82"
 
   url "https://s3.amazonaws.com/BBSW-download/BBEdit_#{version}.dmg",
       verified: "s3.amazonaws.com/BBSW-download/"
@@ -14,6 +14,7 @@ cask "bbedit" do
   end
 
   auto_updates true
+  conflicts_with cask: "bbedit@14"
   depends_on macos: ">= :catalina"
 
   app "BBEdit.app"

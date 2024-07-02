@@ -1,5 +1,5 @@
 cask "ibackup-viewer" do
-  version "4.2740"
+  version "4.3020"
   sha256 :no_check
 
   url "https://www.imactools.com/download/iBackupViewer.dmg"
@@ -12,11 +12,14 @@ cask "ibackup-viewer" do
     strategy :sparkle
   end
 
+  auto_updates true
+
   app "iBackup Viewer.app"
 
   zap trash: [
     "~/Library/Application Support/iBackup Viewer",
     "~/Library/Caches/com.imactools.iBackup-Viewer",
+    "~/Library/HTTPStorages/com.imactools.iBackup-Viewer",
     "~/Library/Logs/iBackup Viewer",
     "~/Library/Preferences/com.imactools.iBackup-Viewer.plist",
     "~/Library/Saved Application State/com.imactools.iBackup-Viewer.savedState",

@@ -1,6 +1,6 @@
 cask "millie" do
-  version "5.22.4"
-  sha256 "af677a8126a9631254586d37bee7eb8c0d64678fe6eb4428632744e00c4a4be8"
+  version "5.25.0"
+  sha256 "2ba416e0f2956ae673ef93003a683f3a8932b372d7c5439bdbe1c02c1dcf6fe0"
 
   url "https://apis.millie.co.kr/v1/download/installer/mac/Millie-#{version}.dmg"
   name "millie"
@@ -12,9 +12,12 @@ cask "millie" do
     strategy :electron_builder
   end
 
+  auto_updates true
+
   app "Millie.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.electron.millie.sfl*",
     "~/Library/Application Support/millie",
     "~/Library/Logs/millie",
     "~/Library/Preferences/com.electron.millie.plist",

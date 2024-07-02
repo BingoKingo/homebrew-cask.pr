@@ -9,7 +9,6 @@ module CiMatrix
 
   # Weight for each arch must add up to 1.0.
   INTEL_RUNNERS = {
-    { symbol: :big_sur,  name: "macos-11", arch: :intel } => 0.0,
     { symbol: :monterey, name: "macos-12", arch: :intel } => 0.0,
     { symbol: :ventura,  name: "macos-13", arch: :intel } => 1.0,
   }.freeze
@@ -86,9 +85,9 @@ module CiMatrix
     end
   end
 
-  def self.random_runner(avalible_runners = INTEL_RUNNERS)
-    avalible_runners.max_by { |(_, weight)| rand ** (1.0 / weight) }
-                    .first
+  def self.random_runner(available_runners = ARM_RUNNERS)
+    available_runners.max_by { |(_, weight)| rand ** (1.0 / weight) }
+                     .first
   end
 
   def self.runners(cask_content:)

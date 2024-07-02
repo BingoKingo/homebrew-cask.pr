@@ -1,6 +1,6 @@
 cask "porting-kit" do
-  version "6.0.21"
-  sha256 "c35b00f86c19de4106aeeba0a8066d627f0a01743811a46c7ece66843fadc82b"
+  version "6.3.2"
+  sha256 "0fea1bbd36bea3c115bc8a94a0ae9afe982a44d824c09cb0d940603f2e0e1a04"
 
   url "https://github.com/vitor251093/porting-kit-releases/releases/download/v#{version}/Porting-Kit-#{version}.dmg",
       verified: "github.com/vitor251093/porting-kit-releases/"
@@ -14,6 +14,8 @@ cask "porting-kit" do
   app "Porting Kit.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.paulthetall.portingkit.sfl*",
+    "~/Library/Application Support/portingkit",
     "~/Library/Preferences/com.paulthetall.portingkit.plist",
     "~/Library/Saved Application State/com.paulthetall.portingkit.savedState",
   ]

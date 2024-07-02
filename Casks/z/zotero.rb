@@ -13,7 +13,7 @@ cask "zotero" do
   end
 
   auto_updates true
-  conflicts_with cask: "zotero-beta"
+  conflicts_with cask: "zotero@beta"
   depends_on macos: ">= :el_capitan"
 
   app "Zotero.app"
@@ -24,4 +24,8 @@ cask "zotero" do
     "~/Library/Preferences/org.zotero.zotero.plist",
     "~/Library/Saved Application State/org.zotero.zotero.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

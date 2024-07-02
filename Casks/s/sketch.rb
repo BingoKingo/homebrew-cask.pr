@@ -8,12 +8,10 @@ cask "sketch" do
     livecheck do
       skip "Legacy version"
     end
-
-    depends_on macos: ">= :big_sur"
   end
   on_monterey :or_newer do
-    version "99.5,178873"
-    sha256 "c2ccf4ff45e54ad9310fd6042bd5b9f474c02ffe59f3a83b8c3523212be4e521"
+    version "100.1,180159"
+    sha256 "582e63a8f50573487a017bee8561df091f9d995be89aa74571ccde0fa7907b62"
 
     url "https://download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
 
@@ -21,8 +19,6 @@ cask "sketch" do
       url "https://download.sketch.com/sketch-versions.xml"
       strategy :sparkle
     end
-
-    depends_on macos: ">= :monterey"
   end
 
   name "Sketch"
@@ -30,6 +26,7 @@ cask "sketch" do
   homepage "https://www.sketch.com/"
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "Sketch.app"
 

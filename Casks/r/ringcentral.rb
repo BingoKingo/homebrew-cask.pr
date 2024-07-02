@@ -1,9 +1,9 @@
 cask "ringcentral" do
   arch arm: "-arm64"
 
-  version "24.1.32"
-  sha256 arm:   "6c88fa9a4420a0f5399d43f8499af2f8282fdc5b0858b85059430da6d931328d",
-         intel: "17a63e54e8ce04590fa65a39f9ed11f50c984a0bcef8b99363ac4a2355829cca"
+  version "24.2.290"
+  sha256 arm:   "4c8e1c9bb0bf8d5eccad50d6f78f101d31d809d80f0336774c06146a38775a91",
+         intel: "56e43db1fa856f5246b7279183d83b47d776303dccf2eab393084e794a0c6339"
 
   url "https://app.ringcentral.com/download/RingCentral-#{version}#{arch}.zip"
   name "RingCentral"

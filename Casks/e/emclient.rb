@@ -1,6 +1,6 @@
 cask "emclient" do
-  version "9.2.2230"
-  sha256 "ac40731918e054b8dc60c331de29cd391ffbe74df0e6b8d207ca60051a1b564d"
+  version "9.2.2258"
+  sha256 "565f8009a46450a266ee3ef2c35c04b59058c053a8000d1b8948fe142b909250"
 
   url "https://cdn-dist.emclient.com/dist/v#{version}_Mac/setup.pkg"
   name "eM Client"
@@ -9,12 +9,13 @@ cask "emclient" do
 
   livecheck do
     url "https://www.emclient.com/dist/latest/setup.pkg"
-    strategy :header_match do |headers|
-      headers["location"][/v?(\d+(?:\.\d+)+)_Mac/i, 1]
-    end
+    regex(/v?(\d+(?:\.\d+)+)[._-]Mac/i)
+    strategy :header_match
   end
 
   auto_updates true
+  conflicts_with cask: "emclient@beta"
+  depends_on macos: ">= :big_sur"
 
   pkg "setup.pkg"
 
@@ -23,9 +24,7 @@ cask "emclient" do
 
   zap trash: [
     "~/Library/Caches/com.emclient.mail.client",
-    "~/Library/Preferences/com.emclient.mail.client.plist",
-    "~/Library/Preferences/com.emclient.mail.repair.plist",
-    "~/Library/Preferences/com.emclient.mail.shared.plist",
+    "~/Library/Preferences/com.emclient.mail.*.plist",
     "~/Library/Saved Application State/com.emclient.mail.client.savedState",
   ]
 end

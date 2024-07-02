@@ -13,8 +13,6 @@ cask "docker" do
     livecheck do
       skip "Legacy version"
     end
-
-    depends_on macos: ">= :catalina"
   end
   on_big_sur do
     version "4.24.2,124339"
@@ -24,20 +22,16 @@ cask "docker" do
     livecheck do
       skip "Legacy version"
     end
-
-    depends_on macos: :big_sur
   end
   on_monterey :or_newer do
-    version "4.28.0,139021"
-    sha256 arm:   "bbea580cbda59233c620a258e4a27369e04d5068735a087b8e13622d5e69fcd5",
-           intel: "2bd6e03121d608dad89261ca14f6e495fdcca97e36231b43da2d7a762047df9d"
+    version "4.31.0,153195"
+    sha256 arm:   "1ae620e92ae1cf87b6607b86b11a792a1a7a4ebfdda1663cb9bce8f275f40b10",
+           intel: "b2571ed2a749572675330d31d0de7ef53425ef8b722b54239ab7eb927eeebcb8"
 
     livecheck do
       url "https://desktop.docker.com/mac/main/#{arch}/appcast.xml"
       strategy :sparkle
     end
-
-    depends_on macos: ">= :monterey"
 
     binary "Docker.app/Contents/Resources/etc/docker-compose.bash-completion",
            target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker-compose"
@@ -61,6 +55,7 @@ cask "docker" do
     docker-compose
     docker-credential-helper-ecr
   ]
+  depends_on macos: ">= :catalina"
 
   app "Docker.app"
   binary "#{appdir}/Docker.app/Contents/Resources/bin/com.docker.cli",
@@ -125,6 +120,8 @@ cask "docker" do
         "~/.docker",
         "~/Library/Application Scripts/com.docker.helper",
         "~/Library/Application Scripts/group.com.docker",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.docker.helper.sfl*",
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.electron.dockerdesktop.sfl*",
         "~/Library/Application Support/com.bugsnag.Bugsnag/com.docker.docker",
         "~/Library/Application Support/Docker Desktop",
         "~/Library/Caches/com.docker.docker",

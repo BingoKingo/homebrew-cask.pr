@@ -1,6 +1,6 @@
 cask "carbide-create" do
-  version "764"
-  sha256 "3f4dae5bd30826b93d7d6bb85291e39d406218bac06e70e4bee40200a5abf6c6"
+  version "777"
+  sha256 "1606b9ef42c3c20a830f595216972ba4bda1542e2e750775bba8b864338da24f"
 
   url "https://carbide-downloads.website-us-east-1.linodeobjects.com/cc/stable/#{version}/CarbideCreate-#{version}.dmg",
       verified: "carbide-downloads.website-us-east-1.linodeobjects.com/"
@@ -15,6 +15,8 @@ cask "carbide-create" do
     end
   end
 
+  depends_on macos: ">= :mojave"
+
   app "Carbide Create.app"
 
   zap trash: [
@@ -22,4 +24,8 @@ cask "carbide-create" do
     "~/Library/Preferences/com.carbide*.Carbide Create.plist",
     "~/Library/Saved Application State/com.carbide3d.Carbide Create.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

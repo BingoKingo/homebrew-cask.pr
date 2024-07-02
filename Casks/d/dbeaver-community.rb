@@ -1,9 +1,9 @@
 cask "dbeaver-community" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "24.0.1"
-  sha256 arm:   "a381758a98356b467cebcf3a13d784d444e36230110c902819a8d2a392a01a3f",
-         intel: "762e28f03cbad321c4080b1f3d6fb9befbb32814baf11475733ee3c7e4aacdce"
+  version "24.1.1"
+  sha256 arm:   "4794d026afac4541471fc12e69781e48950e9e17a96c224b4d498ed0530e8331",
+         intel: "7603adb9f0114559b0b5797e72c9abdac301cc3beafb95d1a2d390ad3cfc8f2b"
 
   url "https://dbeaver.io/files/#{version}/dbeaver-ce-#{version}-macos-#{arch}.dmg"
   name "DBeaver Community Edition"
@@ -13,7 +13,7 @@ cask "dbeaver-community" do
   livecheck do
     url "https://dbeaver.io/product/dbeaver-ce-version.xml"
     strategy :xml do |xml|
-      xml.get_elements("version/number").first&.text&.strip
+      xml.elements["//version/number"]&.text&.strip
     end
   end
 

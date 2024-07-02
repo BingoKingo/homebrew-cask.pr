@@ -16,7 +16,7 @@ cask "arduino-ide" do
     strategy :github_latest
   end
 
-  conflicts_with cask: "arduino-ide-nightly"
+  conflicts_with cask: "arduino-ide@nightly"
   depends_on macos: ">= :high_sierra"
 
   app "Arduino IDE.app"
@@ -24,6 +24,8 @@ cask "arduino-ide" do
   zap trash: [
     "~/.arduinoIDE",
     "~/Library/Application Support/arduino-ide",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/cc.arduino.ide*.sfl*",
+    "~/Library/Preferences/cc.arduino.IDE*.plist",
     "~/Library/Saved Application State/cc.arduino.IDE#{version.major}.savedState",
   ]
 end

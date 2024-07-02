@@ -1,6 +1,6 @@
 cask "cinderella" do
-  version "3.0b.2083"
-  sha256 "301766c70fc0709a8db45c73b4597bf9a24de16370fafa7874f16ef6a0e00df7"
+  version "3.0b.2085"
+  sha256 "fe155d64fdf2c52de34e8cb6a6c6669c3e288f8c3ed19560ce2aea7bc7b69163"
 
   url "https://beta.cinderella.de/Cinderella-#{version}.dmg"
   name "Cinderella"
@@ -9,7 +9,7 @@ cask "cinderella" do
 
   livecheck do
     url "https://beta.cinderella.de/"
-    regex(/href="Cinderella-(\d+.\d+b?.+)\.dmg"/i)
+    regex(/href=.*?Cinderella[._-](\d+(?:\.[\db]+)*)\.dmg/i)
   end
 
   app "Cinderella.app"

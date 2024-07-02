@@ -1,11 +1,14 @@
 cask "glaze" do
-  arch arm: "m1", intel: "Intel"
+  arch arm: "arm64", intel: "Intel"
 
-  version "1.1.1"
-  sha256 arm:   "8b6a86a10bdf24754b946fab6fd750787db0272efad0312b4e6c354e06f1a74f",
-         intel: "a33c52f059a5364d68c036da80fe4afeabc5d1a4355f51fa0b29cf6333785669"
-
+  on_arm do
+    version "2.1"
+    sha256 "8fe831d650ffb4c8cf425bb77bb529148756e850368fff19315e8457c0fdbdde"
+  end
   on_intel do
+    version "2.1"
+    sha256 "34546f93a98625cfad6a215c7274acdacb365f8d666e338219af02465ff7ba94"
+
     depends_on macos: ">= :ventura"
   end
 
@@ -16,7 +19,7 @@ cask "glaze" do
 
   livecheck do
     url "https://glaze.cs.uchicago.edu/downloads.html"
-    regex(/Glaze[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
+    regex(/href=.*?Glaze[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
   end
 
   app "Glaze.app"

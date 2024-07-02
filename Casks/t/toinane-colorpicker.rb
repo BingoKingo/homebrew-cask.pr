@@ -1,8 +1,11 @@
 cask "toinane-colorpicker" do
-  version "2.2.0"
-  sha256 "9fbe263bb81b9814ff583515195adf94bab926c76141a119b173c0fffc8588b4"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://github.com/toinane/colorpicker/releases/download/#{version}/Colorpicker-#{version}.dmg",
+  version "2.2.2"
+  sha256 arm:   "59e0df7270d53902e0971a2f70c7cce6c646a0f58634ac8d7418dcc72a526d82",
+         intel: "dc1af14fe9785a3e5906153aec20f2960266628b0428d9ca98ef4944dc4bef9b"
+
+  url "https://github.com/toinane/colorpicker/releases/download/#{version}/Colorpicker-#{version}-#{arch}.dmg",
       verified: "github.com/toinane/colorpicker/"
   name "Colorpicker"
   desc "Get and save colour codes"

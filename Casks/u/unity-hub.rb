@@ -1,5 +1,5 @@
 cask "unity-hub" do
-  version "3.7.0"
+  version "3.8.0"
   sha256 :no_check
 
   url "https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.dmg"
@@ -23,4 +23,8 @@ cask "unity-hub" do
         "~/Library/Preferences/com.unity3d.unityhub.plist",
       ],
       rmdir: "/Applications/Unity/Hub"
+
+  caveats do
+    requires_rosetta
+  end
 end

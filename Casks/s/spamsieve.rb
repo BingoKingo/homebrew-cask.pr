@@ -1,6 +1,6 @@
 cask "spamsieve" do
-  version "3.0.3"
-  sha256 "0858a7a8770b99fcca16c84f99b826761436571510e6698293e9f52c0179ede9"
+  version "3.0.5"
+  sha256 "d04b0b6563432c73d3cc396dd57509d653eabcf6df0391b00a5e1a94f75dca42"
 
   url "https://c-command.com/downloads/SpamSieve-#{version}.dmg"
   name "SpamSieve"
@@ -11,6 +11,8 @@ cask "spamsieve" do
     url :homepage
     regex(%r{href=.*?/SpamSieve[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
   end
+
+  auto_updates true
 
   app "SpamSieve.app"
 

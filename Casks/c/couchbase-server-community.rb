@@ -13,7 +13,7 @@ cask "couchbase-server-community" do
   end
 
   conflicts_with cask: "couchbase-server-enterprise"
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "Couchbase Server.app"
 
@@ -25,4 +25,8 @@ cask "couchbase-server-community" do
     "~/Library/Preferences/com.couchbase.couchbase-server.plist",
     "~/Library/Preferences/couchbase-server.ini",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

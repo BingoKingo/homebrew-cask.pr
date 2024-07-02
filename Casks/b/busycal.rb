@@ -1,20 +1,16 @@
 cask "busycal" do
-  version "2024.1.2,2024-03-13-16-36"
-  sha256 "27cb38f6f78b0ce8efca7a1861ac37fbff9c212da8edd1914ea2b9b9e3f14091"
+  version "2024.3.2"
+  sha256 "2ddd765683811c2be9e3781cf833a85cee6d7db0b771d666b106b602e7cf7acb"
 
-  url "https://7e968b6ce8a839f034d9-23cfb9eddcb7b94cb43ba95f95a76900.ssl.cf1.rackcdn.com/bcl-#{version.csv.first}-#{version.csv.second}.zip",
-      verified: "7e968b6ce8a839f034d9-23cfb9eddcb7b94cb43ba95f95a76900.ssl.cf1.rackcdn.com/"
+  url "https://www.busymac.com/download/bcl-#{version}.zip"
   name "BusyCal"
   desc "Calendar software focusing on flexibility and reliability"
   homepage "https://busymac.com/busycal/index.html"
 
   livecheck do
-    url "https://www.busymac.com/download/BusyCal.zip"
-    strategy :header_match do |headers|
-      match = headers["location"].match(/bcl-(\d+(?:\.\d+)+)-(.*?)\.zip/)
-      next if match.blank?
-
-      "#{match[1]},#{match[2]}"
+    url "https://versioncheck.busymac.com/busycal/news.plist"
+    strategy :xml do |xml|
+      xml.elements["//dict/key[text()='current']"]&.next_element&.text&.strip
     end
   end
 

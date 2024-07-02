@@ -48,8 +48,8 @@ cask "microsoft-powerpoint" do
     end
   end
   on_monterey :or_newer do
-    version "16.83.24031120"
-    sha256 "287b6ead075c037cccd9958471387af59b0e1fb828a88f23f15c256071874956"
+    version "16.86.24060916"
+    sha256 "beeafdc98ae1ea77b2b96bccf3df3826a022602dc6c354bd710b846667ff14d0"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525136"

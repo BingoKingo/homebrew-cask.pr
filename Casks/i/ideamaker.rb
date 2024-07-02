@@ -1,11 +1,11 @@
 cask "ideamaker" do
   arch arm: "-arm64"
 
-  version "4.3.3.6560"
-  sha256 arm:   "31486067e67d564bf464c2bf35795caef3eef2d42e043017eab35c5e4328dde0",
-         intel: "8d39a317e647c541293b2a27ed7752833727a79d2dcdd841df5e072bab6679b0"
+  version "5.0.6.8380"
+  sha256 arm:   "11d2f2a8af237e047cdd1c28875dc59f5643d41d8314dda27d34185fe6a8eb7a",
+         intel: "06e9d37f1a2b7d24da7652bd21f41170c44ba73ce73e79d724aa5b85acc5d9cb"
 
-  url "https://download.raise3d.com/ideamaker/release/#{version.major_minor_patch}/install_ideaMaker_#{version}#{arch}.dmg"
+  url "https://downcdn.raise3d.com/ideamaker/release/#{version.major_minor_patch}/install_ideaMaker_#{version}#{arch}.dmg"
   name "ideaMaker"
   desc "FDM 3D Printing Slicer by Raise3D"
   homepage "https://www.raise3d.com/ideamaker/"
@@ -14,6 +14,8 @@ cask "ideamaker" do
     url "https://www.raise3d.com/download/"
     regex(%r{href=.*?/install[._-]ideaMaker[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
   end
+
+  depends_on macos: ">= :catalina"
 
   app "ideaMaker.app"
 

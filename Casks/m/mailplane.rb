@@ -1,6 +1,6 @@
 cask "mailplane" do
-  version "4.3.6,4932"
-  sha256 "2b8d47bc8dc922d4b53a4c45ebcbdad51174e9b3e043b02150d608218ffc2596"
+  version "4.3.10,4949"
+  sha256 "f18d0e9aeab51cc1001a898945535c84ddba393749ca4ac775524d90be6d2e63"
 
   url "https://builds.mailplaneapp.com/Mailplane_#{version.major}_#{version.csv.second}.tbz"
   name "Mailplane"

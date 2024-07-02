@@ -1,6 +1,6 @@
 cask "atok" do
-  version "33.4"
-  sha256 "485ed8fe67cfd345aab65d17f1208feb9fd51613d878f6c67a24406deb2b7e6f"
+  version "34.1"
+  sha256 "7c5013c03d8ff8f788d158ac80d39ca4aae00d52fd520f81723ecd99fd733fee"
 
   url "https://gate.justsystems.com/download/atok/ut/mac/at#{version.dots_to_underscores}.dmg"
   name "ATOK"
@@ -35,4 +35,18 @@ cask "atok" do
               "com.justsystems.JustOnlineUpdate.pkg",
               "com.justsystems.pkg.lma",
             ]
+
+  zap delete: [
+        "/Library/Application Support/JustSystems",
+        "/Library/Application Support/Preferences/JustSystems",
+        "/Library/JustSystems",
+        "/Library/Preferences/com.justsystems.*.plist",
+        "/Library/Preferences/JustSystems",
+      ],
+      trash:  [
+        "~/Library/Caches/com.justsystems.OnlineUpdate",
+        "~/Library/HTTPStorages/com.justsystems.OnlineUpdate",
+        "~/Library/Preferences/com.justsystems.OnlineUpdate.plist",
+        "~/Library/Saved Application State/com.justsystems.OnlineUpdate.savedState",
+      ]
 end

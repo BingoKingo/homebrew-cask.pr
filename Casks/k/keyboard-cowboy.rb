@@ -1,6 +1,6 @@
 cask "keyboard-cowboy" do
-  version "3.23.2"
-  sha256 "85e527c8a86620dedd9201464249000d49f77143b7406a944eeff71b571ffe45"
+  version "3.24.2"
+  sha256 "3086c2c7c99c49a9947abd91e3aecc7bfedbba0c5cc2042bb50ba328b0bba893"
 
   url "https://github.com/zenangst/KeyboardCowboy/releases/download/#{version}/Keyboard.Cowboy.#{version}.dmg"
   name "Keyboard Cowboy"
@@ -12,5 +12,9 @@ cask "keyboard-cowboy" do
 
   app "Keyboard Cowboy.app"
 
-  zap trash: "~/Library/Preferences/com.zenangst.Keyboard-Cowboy.plist"
+  zap trash: [
+    "~/.keyboard-cowboy.json",
+    "~/Library/HTTPStorages/com.zenangst.Keyboard-Cowboy",
+    "~/Library/Preferences/com.zenangst.Keyboard-Cowboy.plist",
+  ]
 end

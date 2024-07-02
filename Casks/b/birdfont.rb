@@ -9,12 +9,23 @@ cask "birdfont" do
     end
   end
   on_catalina :or_newer do
-    version "5.2.1"
-    sha256 "e68b64679b8cdfbc193304edb83389e9546210ad77e886c903c30c3db89597e5"
+    on_ventura :or_older do
+      version "5.2.1"
+      sha256 "e68b64679b8cdfbc193304edb83389e9546210ad77e886c903c30c3db89597e5"
+
+      livecheck do
+        url "https://birdfont.org/purchase.php"
+        regex(%r{Mac\s*OS\s*10\.15.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
+      end
+    end
+  end
+  on_sonoma :or_newer do
+    version "6.7.1"
+    sha256 "67041c24cd8de2585dc850081006d41e5169c456f3cee1d3d06f78e521378722"
 
     livecheck do
       url "https://birdfont.org/purchase.php"
-      regex(%r{Mac\s*OS\s*10\.15.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
+      regex(%r{Mac\s*OS\s*14.*?/birdfont[._-]v?(\d+(?:\.\d+)+)[._-]free\.dmg}i)
     end
   end
 

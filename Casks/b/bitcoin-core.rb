@@ -1,9 +1,9 @@
 cask "bitcoin-core" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "26.1"
-  sha256 arm:   "8f0bdc51733a94f83cb96a215943291de64b501bbe0298a9b897f79d8ad517e9",
-         intel: "8fd415bfd0ba2d967d1fd03433b150e9b739a08f86c58c6d4dd0f8506a41fc12"
+  version "27.1"
+  sha256 arm:   "06bf5d34aef01f21dac88708efa32d5e673c3ce1c8f17b1ca34b0e517ed8e43f",
+         intel: "25445080e2616d7c621f48f51e7a4294698d92016ef27ab88608cbe824f93364"
 
   url "https://bitcoincore.org/bin/bitcoin-core-#{version}/bitcoin-#{version}-#{arch}-apple-darwin.zip"
   name "Bitcoin Core"
@@ -24,5 +24,12 @@ cask "bitcoin-core" do
     set_permissions "#{staged_path}/Bitcoin-Qt.app", "0755"
   end
 
-  zap trash: "~/Library/Preferences/org.bitcoin.Bitcoin-Qt.plist"
+  # Don't trash directory "~/Library/Application Support/Bitcoin" because it can contain bitcoin wallets
+  zap trash: [
+    "~/Library/Application Support/Bitcoin/blocks",
+    "~/Library/Application Support/Bitcoin/chainstate",
+    "~/Library/Preferences/org.bitcoin.Bitcoin-Qt.plist",
+    "~/Library/Preferences/org.bitcoinfoundation.Bitcoin-Qt.plist",
+    "~/Library/Saved Application State/org.bitcoinfoundation.Bitcoin-Qt.savedState",
+  ]
 end

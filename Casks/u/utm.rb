@@ -1,6 +1,6 @@
 cask "utm" do
-  version "4.4.5"
-  sha256 "16520f496a98d95d5a91dfc89d2e813c405f73ca68989f238039ecef0bda3a6f"
+  version "4.5.3"
+  sha256 "ee1a564dee93be7368745b75ad2446a2e81e66e123bd27ae57305615f628e776"
 
   url "https://github.com/utmapp/UTM/releases/download/v#{version}/UTM.dmg",
       verified: "github.com/utmapp/UTM/"
@@ -14,7 +14,7 @@ cask "utm" do
     strategy :github_latest
   end
 
-  conflicts_with cask: "homebrew/cask-versions/utm-beta"
+  conflicts_with cask: "utm@beta"
   depends_on macos: ">= :big_sur"
 
   app "UTM.app"

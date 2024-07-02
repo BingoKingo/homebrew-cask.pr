@@ -4,7 +4,7 @@ cask "atom" do
 
   url "https://github.com/atom/atom/releases/download/v#{version}/atom-mac.zip",
       verified: "github.com/atom/atom/"
-  name "Github Atom"
+  name "GitHub Atom"
   desc "Text editor"
   homepage "https://atom.io/"
 
@@ -32,4 +32,8 @@ cask "atom" do
     "~/Library/Saved Application State/com.github.atom.savedState",
     "~/Library/WebKit/com.github.atom",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

@@ -1,8 +1,8 @@
 cask "fabfilter-pro-l" do
-  version "2.23"
-  sha256 "5b6ad7262c08de3e78ecb44410960e1bb31717329e65fc24e9a6e264856c51d3"
+  version "2.24"
+  sha256 "d27a302af21c7af265eeffe7c9b334ad9b1e742d9eb76017eafcbefe9adaf8c1"
 
-  url "https://www.fabfilter.com/downloads/ffprol#{version.no_dots}.dmg"
+  url "https://cdn-b.fabfilter.com/downloads/ffprol#{version.no_dots}.dmg"
   name "FabFilter Pro-L"
   desc "Limiter plug-in"
   homepage "https://www.fabfilter.com/products/pro-l-2-limiter-plug-in"

@@ -1,9 +1,9 @@
 cask "drawio" do
   arch arm: "arm64", intel: "x64"
 
-  version "24.1.0"
-  sha256 arm:   "b8f964a096fca9e7528b863752786189e6d2a12d69a5c1886db34b446e11bb38",
-         intel: "1688b386fb9278aac1f2583f9f1e9e421a454461bba0e5cd709d51e195df42c1"
+  version "24.6.4"
+  sha256 arm:   "3f0a0a1a3e516634d4bbbe1b649479c2423ead77c49b674388ec0f09247738aa",
+         intel: "d5d1ae0a4ef82061d9769d2231940f345bfe19ef15f3daff3a374e32a1bb32bf"
 
   url "https://github.com/jgraph/drawio-desktop/releases/download/v#{version}/draw.io-#{arch}-#{version}.dmg",
       verified: "github.com/jgraph/drawio-desktop/"
@@ -17,6 +17,7 @@ cask "drawio" do
   end
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "draw.io.app"
 

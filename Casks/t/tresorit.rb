@@ -1,9 +1,8 @@
 cask "tresorit" do
-  version "3.5.2974.4140"
+  version "3.5.3013.4230"
   sha256 :no_check
 
-  url "https://installerstorage.blob.core.windows.net/public/install/Tresorit.dmg",
-      verified: "installerstorage.blob.core.windows.net/"
+  url "https://installer.tresorit.com/Tresorit.dmg"
   name "Tresorit"
   desc "Client for the Tresorit cloud storage service"
   homepage "https://tresorit.com/"

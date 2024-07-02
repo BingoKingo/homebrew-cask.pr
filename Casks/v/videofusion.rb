@@ -1,19 +1,23 @@
 cask "videofusion" do
-  version "5.5.0.9965"
-  sha256 "c6574eff0ded13b9498ea682c86967a3c28ee9f3525c68cb38a1c0a46cc3cacf"
+  version "6.0.1.10410"
+  sha256 "62b9629e530eef01580f365b3e89d9757e87eaa7edfb20e9ed7cd7c42faa65e2"
 
   url "https://lf3-package.vlabstatic.com/obj/faceu-packages/Jianying_#{version.dots_to_underscores}_jianyingpro_0_creatortool.dmg",
       verified: "lf3-package.vlabstatic.com/obj/faceu-packages/"
   name "VideoFusion"
   name "剪映专业版"
-  desc "Video editor"
-  homepage "https://lv.ulikecam.com/"
+  name "Jianying Pro"
+  desc "Free all-in-one video editor"
+  homepage "https://www.capcut.cn/"
 
   livecheck do
-    url "https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_80/bee_prod_80_bee_publish_3563.json"
-    regex(/Jianying[._-]v?(\d+(?:[._]\d+)+).*\.dmg/i)
+    url "https://lv-api-hl.ulikecam.com/service/settings/v3/?&aid=3704&rom_version=9965&version_code=328960&channel=jianyingpro_0&device_platform=mac"
+    regex(/Jianying[._-]v?(\d+(?:[._]\d+)+).+?\.dmg/i)
     strategy :json do |json, regex|
-      match = json.dig("mac_download_pkg", "channel_default")&.match(regex)
+      url = json.dig("data", "settings", "update_reminder", "lastest_stable_url")
+      next if url.blank?
+
+      match = url.match(regex)
       next if match.blank?
 
       match[1].tr("_", ".")

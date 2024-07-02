@@ -1,7 +1,7 @@
 cask "webex" do
   arch arm: "Desktop-MACOS-Apple-Silicon", intel: "TeamsDesktop-MACOS"
 
-  version "44.3.0.28993"
+  version "44.6.0.29928"
   sha256 :no_check
 
   url "https://binaries.webex.com/Webex#{arch}-Gold/Webex.dmg"
@@ -24,6 +24,7 @@ cask "webex" do
     "~/Library/Application Scripts/com.cisco.webex.Cisco-WebEx-Start.CWSSafariExtension",
     "~/Library/Application Scripts/group.com.cisco.webex.meetings",
     "~/Library/Application Support/Cisco Spark",
+    "~/Library/Application Support/Cisco/WebEx Meetings",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.cisco.webex.*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/webex-pt.webexapplauncher.sfl*",
     "~/Library/Application Support/WebEx Folder",

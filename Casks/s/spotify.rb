@@ -4,10 +4,10 @@ cask "spotify" do
   sha256 :no_check
 
   on_arm do
-    version "1.2.33.1042,26c92729,4487"
+    version "1.2.40.599,606b7f29,602"
   end
   on_intel do
-    version "1.2.33.1042,26c92729,4440"
+    version "1.2.40.599,606b7f29,1525"
   end
 
   url "https://download.scdn.co/Spotify#{arch}.dmg",
@@ -27,11 +27,14 @@ cask "spotify" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Spotify.app"
 
-  uninstall launchctl: "com.spotify.webhelper",
+  uninstall launchctl: [
+              "com.spotify.client.startuphelper",
+              "com.spotify.webhelper",
+            ],
             quit:      "com.spotify.client"
 
   zap trash: [

@@ -19,10 +19,7 @@ cask "processing" do
     end
   end
 
-  conflicts_with cask: [
-    "homebrew/cask-versions/processing2",
-    "homebrew/cask-versions/processing3",
-  ]
+  conflicts_with cask: "processing@3"
   depends_on macos: ">= :catalina"
 
   app "Processing.app"

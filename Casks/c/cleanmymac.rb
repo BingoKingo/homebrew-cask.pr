@@ -1,8 +1,8 @@
 cask "cleanmymac" do
-  version "4.15.2"
-  sha256 "34f7c3e288b416ac208a8b25f4aeb42d06a4f7b35396ba3934730922edc0278b"
+  version "4.15.4,41504.0.2406170832,1718790632"
+  sha256 "5c3db86bdd87a6dd4471c945c0342bc7df6f3f521080af48ed69f005fa5239ff"
 
-  url "https://dl.devmate.com/com.macpaw.CleanMyMac#{version.major}/CleanMyMacX.dmg",
+  url "https://dl.devmate.com/com.macpaw.CleanMyMac#{version.major}/#{version.csv.second}/#{version.csv.third}/CleanMyMacX-#{version.csv.second}.zip",
       verified: "dl.devmate.com/"
   name "CleanMyMac X"
   desc "Tool to remove unnecessary files and folders from disk"
@@ -10,7 +10,13 @@ cask "cleanmymac" do
 
   livecheck do
     url "https://updates.devmate.com/com.macpaw.CleanMyMac#{version.major}.xml"
-    strategy :sparkle, &:short_version
+    regex(%r{/([^/]+)/CleanMyMacX[._-]v?(?:\d+(?:\.\d+)+)\.zip}i)
+    strategy :sparkle do |item|
+      directory = item.url[regex, 1]
+      next if directory.blank?
+
+      "#{item.short_version},#{item.version},#{directory}"
+    end
   end
 
   auto_updates true

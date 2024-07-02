@@ -1,5 +1,5 @@
 cask "cloudmounter" do
-  version "4.5"
+  version "4.6"
   sha256 :no_check
 
   url "https://cdn.electronic.us/products/cloudmounter/mac/download/cloudmounter.dmg",
@@ -13,11 +13,13 @@ cask "cloudmounter" do
     strategy :sparkle, &:short_version
   end
 
+  auto_updates true
   depends_on macos: ">= :mojave"
 
   app "CloudMounter.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.eltima.cloudmounter.sfl*",
     "~/Library/Application Support/com.eltima.cloudmounter",
     "~/Library/Caches/com.eltima.cloudmounter",
     "~/Library/Logs/CloudMounter.log",

@@ -7,9 +7,17 @@ cask "openttd" do
       skip "Legacy version"
     end
   end
-  on_mojave :or_newer do
+  on_mojave do
     version "13.4"
     sha256 "085cdb35867dca1dcfb8a1748417e7ba6431551ebc33df290a4e48b244d8d376"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  end
+  on_catalina :or_newer do
+    version "14.1"
+    sha256 "68954bbfb941a599c9b2e017d56e12b64794f2494b4d41d308d66167e53fc6c5"
 
     livecheck do
       url "https://www.openttd.org/downloads/openttd-releases/latest"

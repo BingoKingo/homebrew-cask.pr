@@ -1,14 +1,15 @@
 cask "vmware-horizon-client" do
-  version "2312-8.12.0-23149316,CART24FQ4_MAC_2312"
-  sha256 "f2d2b5fb6e70d1d8b67d13209fb9591bc326c8796e098bde6db514d0c6b18db4"
+  version "2312.1-8.12.1-23531248,CART25FQ1_MAC_2312.1"
+  sha256 "007dbce07b319d7eb633d937135b0f39c72b0d4bbc38ae1939b05fc676bd4f2e"
 
-  url "https://download3.vmware.com/software/#{version.csv.second}/VMware-Horizon-Client-#{version.csv.first}.dmg"
+  url "https://download3.omnissa.com/software/#{version.csv.second}/VMware-Horizon-Client-#{version.csv.first}.dmg",
+      verified: "download3.omnissa.com/software/"
   name "VMware Horizon Client"
   desc "Virtual machine client"
   homepage "https://www.vmware.com/"
 
   livecheck do
-    url "https://customerconnect.vmware.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&category=desktop_end_user_computing&product=vmware_horizon_clients&version=horizon_8&dlgType=PRODUCT_BINARY"
+    url "https://customerconnect.omnissa.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&category=desktop_end_user_computing&product=vmware_horizon_clients&version=horizon_8&dlgType=PRODUCT_BINARY"
     regex(%r{/([^/]+)/VMware[._-]Horizon[._-]Client[._-]v?(\d+(?:[.-]\d+)+)\.dmg}i)
     strategy :json do |json|
       mac_json_info = json["dlgEditionsLists"]&.select { |item| item["name"].match(/mac/i) }&.first
@@ -20,7 +21,7 @@ cask "vmware-horizon-client" do
       pid = api_item["releasePackageId"]
       next if download_group.blank? || product_id.blank? || pid.blank?
 
-      url = "https://customerconnect.vmware.com/channel/public/api/v1.0/dlg/details?locale=en_US&downloadGroup=#{download_group}&productId=#{product_id}&rPId=#{pid}"
+      url = "https://customerconnect.omnissa.com/channel/public/api/v1.0/dlg/details?locale=en_US&downloadGroup=#{download_group}&productId=#{product_id}&rPId=#{pid}"
       download_item = Homebrew::Livecheck::Strategy.page_content(url)
       next if download_item[:content].blank?
 

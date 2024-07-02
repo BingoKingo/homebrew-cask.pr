@@ -1,20 +1,19 @@
 cask "element" do
-  version "1.11.63"
-  sha256 :no_check
+  version "1.11.69"
+  sha256 "6e07070d3525c25280d0ab8fb6854afe8fbcc58ba4c020fafbc770690acaf092"
 
-  url "https://packages.element.io/desktop/install/macos/Element.dmg"
+  url "https://packages.element.io/desktop/install/macos/Element-#{version}-universal.dmg"
   name "Element"
   desc "Matrix collaboration client"
   homepage "https://element.io/get-started"
 
-  # The upstream website doesn't appear to provide version information. We check
-  # GitHub releases as a best guess of when a new version is released.
   livecheck do
-    url "https://github.com/vector-im/element-desktop"
-    strategy :github_latest
+    url "https://packages.element.io/desktop/install/macos/index.html"
+    regex(/href=.*?Element[._-]v?(\d+(?:\.\d+)+)[._-]universal\.dmg/i)
   end
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "Element.app"
 

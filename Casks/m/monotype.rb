@@ -1,32 +1,37 @@
 cask "monotype" do
-  version "6.4.4"
-  sha256 "bae2a5cd6d81105297a282dd3714cbe61d2055f90a7c0bec471510b3ec5ac6be"
+  version "7.2.0"
+  sha256 "d16a698a94e05ae4453118281f71242a5b27d9d312f8baba5a42aafae0c23d48"
 
-  url "https://monotypeapp.monotype.com/release/#{version.no_dots}/mac/system/DTAppInstaller.tar.tgz"
+  url "https://monotypeapp.monotype.com/release/#{version.no_dots}/mac/MTFInstaller.zip"
   name "Monotype Desktop App"
   desc "Font finder and organiser"
   homepage "https://support.monotype.com/en/articles/7860542-monotype-desktop-app"
 
   livecheck do
-    url "https://support.monotype.com/en/articles/7859464-release-notes"
+    url "https://support.monotype.com/en/articles/8617063-latest-release-notes"
     regex(/<p>Version\s*v?(\d+(?:\.\d+)+)[ "<]/i)
   end
 
-  installer script: {
-    executable: "#{staged_path}/DTAppInstaller.app/Contents/MacOS/installbuilder.sh",
-    sudo:       true,
-  }
+  auto_updates true
 
-  uninstall script: {
-    executable: "/Applications/Monotype desktop app/uninstall.app/Contents/MacOS/installbuilder.sh",
-    sudo:       true,
-  }
+  pkg "MTFInstaller.pkg"
+
+  uninstall launchctl: [
+              "com.monotype.mfep",
+              "com.monotype.monitorService",
+              "com.monotype.ms",
+              "com.monotype.updater",
+            ],
+            quit:      "com.monotype.monotype-fonts",
+            pkgutil:   "com.monotype.monotype-fonts"
 
   zap trash: [
     "~/Library/Application Scripts/com.monotype.notification-service",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.monotype.*.sfl*",
+    "~/Library/Application Support/Monotype Fonts",
     "~/Library/Containers/com.monotype.notification-service",
-    "~/Library/Preferences/com.monotype.monotype-desktop-app.plist",
-    "~/Library/Preferences/com.monotype.monotype-fonts-app-helper.plist",
-    "~/Library/Saved Application State/com.monotype.monotype-desktop-app.savedState",
+    "~/Library/Logs/Monotype Fonts",
+    "~/Library/Preferences/com.monotype.*.plist",
+    "~/Library/Saved Application State/com.monotype.*.savedState",
   ]
 end

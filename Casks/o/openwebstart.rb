@@ -1,9 +1,9 @@
 cask "openwebstart" do
   arch arm: "aarch64", intel: "x64"
 
-  version "1.9.1"
-  sha256 arm:   "bcbf70a3361e88646e43d5be5d9b9917e84a44fc9dde616de56c57bd663ab23d",
-         intel: "cec264313bdca051e4d2890d6e8c95147d7eb9e739142efb3e5b78b6dbdf4719"
+  version "1.10.1"
+  sha256 arm:   "f3e384ec5ef0cad9d775513d253a114d0c56013cbf8256c7005093f86bb3039e",
+         intel: "e7b91498e721b91110b71878bbb88c7b38ebb45cb948b20aee92cc5f5fd36b97"
 
   url "https://github.com/karakun/OpenWebStart/releases/download/v#{version}/OpenWebStart_macos-#{arch}_#{version.dots_to_underscores}.dmg",
       verified: "github.com/karakun/OpenWebStart/"

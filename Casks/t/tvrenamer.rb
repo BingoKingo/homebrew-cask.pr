@@ -6,7 +6,7 @@ cask "tvrenamer" do
       verified: "github.com/tvrenamer/tvrenamer/"
   name "TVRenamer"
   desc "Utility to rename TV episodes from TV listings"
-  homepage "http://tvrenamer.org/"
+  homepage "https://www.tvrenamer.org/"
 
   livecheck do
     url :url
@@ -17,5 +17,6 @@ cask "tvrenamer" do
 
   caveats do
     depends_on_java
+    requires_rosetta
   end
 end

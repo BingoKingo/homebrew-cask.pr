@@ -1,6 +1,6 @@
 cask "missive" do
-  version "10.61.0"
-  sha256 "0a906bdc4c5184460e5b5140c9e912d42d0c769008940014fe00248200d64ed1"
+  version "10.64.1"
+  sha256 "3e79609aba0464f2816759094fc9aa4b82d6698e4d346c4044ea0e5a01f18170"
 
   url "https://downloads.missiveapp.com/#{version}/Missive-#{version}.dmg"
   name "Missive"

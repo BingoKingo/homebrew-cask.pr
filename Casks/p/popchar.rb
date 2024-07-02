@@ -1,6 +1,6 @@
 cask "popchar" do
-  version "10.0"
-  sha256 "b7e8d830edd1e61fc842695e3c14df7973f3680b4f352063ad1838059d538bcf"
+  version "10.2"
+  sha256 "fdacb546b07e558b4e1b7dd69d728a608b12f50ccc8dc1713b5606837fc9ac95"
 
   url "https://www.ergonis.com/downloads/products/popcharx/PopCharX#{version.no_dots}-Install.dmg",
       user_agent: :fake

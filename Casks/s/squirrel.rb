@@ -1,16 +1,17 @@
 cask "squirrel" do
-  version "0.16.2"
-  sha256 "e08d28fd72445bccbdbccc06b16a9e300c07371f67d576cd4ed35731be9d4ad6"
+  version "1.0.2"
+  sha256 "2912bf3435d5c85aa87b0eaa3f08a487888b8bbbe3b48ea0ccef1a5f8215cebf"
 
-  url "https://github.com/rime/squirrel/releases/download/#{version}/Squirrel-#{version}.zip",
+  url "https://github.com/rime/squirrel/releases/download/#{version}/Squirrel-#{version}.pkg",
       verified: "github.com/rime/squirrel/"
   name "Squirrel"
   desc "Rime input method engine"
   homepage "https://rime.im/"
 
   auto_updates true
+  depends_on macos: ">= :ventura"
 
-  pkg "Squirrel.pkg"
+  pkg "Squirrel-#{version}.pkg"
 
   uninstall pkgutil: [
               "com.googlecode.rimeime.Squirrel.pkg", # Package name of older versions (< 0.10.0)

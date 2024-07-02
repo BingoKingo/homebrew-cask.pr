@@ -1,6 +1,6 @@
 cask "parallels" do
-  version "19.3.0-54924"
-  sha256 "1e3d666a74126478a1b7a9a659eb38e11564d8176aa7a41d34274adf6d9bcd67"
+  version "19.4.1-54985"
+  sha256 "5411c2b3168c23a99f99cfe24388495bfe7ddab29c93d1e29535f61eaec76f9b"
 
   url "https://download.parallels.com/desktop/v#{version.major}/#{version}/ParallelsDesktop-#{version}.dmg"
   name "Parallels Desktop"
@@ -17,13 +17,13 @@ cask "parallels" do
 
   auto_updates true
   conflicts_with cask: [
-    "homebrew/cask-versions/parallels12",
-    "homebrew/cask-versions/parallels13",
-    "homebrew/cask-versions/parallels14",
-    "homebrew/cask-versions/parallels15",
-    "homebrew/cask-versions/parallels16",
-    "homebrew/cask-versions/parallels17",
-    "homebrew/cask-versions/parallels18",
+    "parallels@12",
+    "parallels@13",
+    "parallels@14",
+    "parallels@15",
+    "parallels@16",
+    "parallels@17",
+    "parallels@18",
   ]
   depends_on macos: ">= :monterey"
 

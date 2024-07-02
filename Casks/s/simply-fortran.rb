@@ -1,25 +1,41 @@
 cask "simply-fortran" do
   arch arm: "-arm64", intel: "-x86_64"
 
+  version "3.35.4216"
+
   on_big_sur :or_older do
-    version "3.34.4154"
-    sha256 "676f096f8ee509252023bcd3eafd99897bf079e87ebd3ffd2f41dfad6b45f273"
+    sha256 "eebe9337898adfd4a27c628e67395f9a84fad977276ac99dfea8c29093163f69"
 
     url "https://download.simplyfortran.com/#{version.major_minor}/macos/simplyfortran-#{version}-x86_64.legacy.dmg"
 
     livecheck do
-      skip "Legacy version"
+      url "https://simplyfortran.com/download/?platform=macos"
+      regex(/href=.*?simplyfortran[._-]v?(\d+(?:\.\d+)+)[._-]x86_64\.legacy\.dmg/i)
     end
   end
-  on_monterey :or_newer do
-    on_arm do
-      version "3.32.4016"
-      sha256 "11d513fc26c367869e678e3a46f5ec80bae8e55747c1331c46c022deb388937e"
+  on_monterey do
+    sha256 "074021b2faeeaf7a737ff9f5b0dfef2b43b6265968f862a6ee4e648f5e4f91c5"
+
+    url "https://download.simplyfortran.com/#{version.major_minor}/macos/simplyfortran-#{version}-x86_64.dmg"
+
+    livecheck do
+      url "https://simplyfortran.com/download/?platform=macos"
+      regex(/href=.*?simplyfortran[._-]v?(\d+(?:\.\d+)+)[._-]x86_64\.dmg/i)
     end
-    on_intel do
-      version "3.34.4154"
-      sha256 "ee48deb9308b68df1ff65d86d6f1df37d5c46bdd40f8ccd1ebe27677bc9b2a27"
+  end
+  on_ventura do
+    sha256 "074021b2faeeaf7a737ff9f5b0dfef2b43b6265968f862a6ee4e648f5e4f91c5"
+
+    url "https://download.simplyfortran.com/#{version.major_minor}/macos/simplyfortran-#{version}-x86_64.dmg"
+
+    livecheck do
+      url "https://simplyfortran.com/download/?platform=macos"
+      regex(/href=.*?simplyfortran[._-]v?(\d+(?:\.\d+)+)[._-]x86_64\.dmg/i)
     end
+  end
+  on_sonoma :or_newer do
+    sha256 arm:   "c600ddf0e38bbb643d63e06982c223edb989a78d010d72a1b05872976a334a12",
+           intel: "074021b2faeeaf7a737ff9f5b0dfef2b43b6265968f862a6ee4e648f5e4f91c5"
 
     url "https://download.simplyfortran.com/#{version.major_minor}/macos/simplyfortran-#{version}#{arch}.dmg"
 

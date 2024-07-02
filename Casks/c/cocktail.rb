@@ -77,8 +77,8 @@ cask "cocktail" do
     end
   end
   on_ventura do
-    version "16.4.3"
-    sha256 "27b6938c84b0b21dc6c055e9daa22ba7a15f29f894292409737fe4a20f7d7b74"
+    version "16.6"
+    sha256 "8fcb3fda2fc0b3ca7655f9f4c22822066495c5fca7b184d0e4e499bda4e4075c"
 
     url "https://www.maintain.se/downloads/Cocktail#{version.major}VE.dmg"
 
@@ -88,8 +88,8 @@ cask "cocktail" do
     end
   end
   on_sonoma :or_newer do
-    version "17.1.1"
-    sha256 "cd1de2561de983b5cbc9a029f349e779f09c0fd4ec531224ec598442ae7d24f9"
+    version "17.3"
+    sha256 "95de3f2b202ceb2bea74004353d7cc349d88373319488d52fc47ebe160508032"
 
     url "https://www.maintain.se/downloads/Cocktail#{version.major}SE.dmg"
 

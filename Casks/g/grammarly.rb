@@ -7,16 +7,14 @@ cask "grammarly" do
   desc "Utility to fix grammar errors and style issues in text"
   homepage "https://www.grammarly.com/"
 
-  livecheck do
-    url "https://update.grammarly.com/desktop-editor/osx"
-    regex(/GrammarlyEditor[._-]?v?(\d+(?:\.\d+)+)[._-]osx\.zip/i)
-  end
+  disable! date: "2024-04-24", because: :discontinued
 
   auto_updates true
 
   app "Grammarly Editor.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.grammarly.projectllama.loginhelper.sfl*",
     "~/Library/Application Support/Grammarly",
     "~/Library/Caches/com.grammarly.DesktopEditor",
     "~/Library/Caches/com.grammarly.DesktopEditor.ShipIt",

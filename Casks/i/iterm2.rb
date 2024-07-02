@@ -17,8 +17,8 @@ cask "iterm2" do
     end
   end
   on_catalina :or_newer do
-    version "3.4.23"
-    sha256 "82ee82369d14d452c2d3c8886d460e2466e46dc517eb3d96b2b04c97b0c23d49"
+    version "3.5.2"
+    sha256 "76ae9203144ca2b72ea699b47f3337ede88aabb06a0e2424b64196e60813385a"
 
     livecheck do
       # workaround for
@@ -33,25 +33,26 @@ cask "iterm2" do
   url "https://iterm2.com/downloads/stable/iTerm2-#{version.dots_to_underscores}.zip"
   name "iTerm2"
   desc "Terminal emulator as alternative to Apple's Terminal app"
-  homepage "https://www.iterm2.com/"
+  homepage "https://iterm2.com/"
 
   auto_updates true
   conflicts_with cask: [
-    "homebrew/cask-versions/iterm2-beta",
-    "homebrew/cask-versions/iterm2-legacy",
-    "homebrew/cask-versions/iterm2-nightly",
+    "iterm2@beta",
+    "iterm2@nightly",
   ]
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :sierra"
 
   app "iTerm.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.googlecode.iterm2.itermai.sfl*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.googlecode.iterm2.sfl*",
     "~/Library/Application Support/iTerm",
     "~/Library/Application Support/iTerm2",
     "~/Library/Caches/com.googlecode.iterm2",
+    "~/Library/Containers/iTermAI",
     "~/Library/Cookies/com.googlecode.iterm2.binarycookies",
     "~/Library/Preferences/com.googlecode.iterm2.plist",
-    "~/Library/Saved Application State/com.googlecode.iterm2.savedState",
+    "~/Library/Saved Application State/com.googlecode.iterm2*.savedState",
   ]
 end

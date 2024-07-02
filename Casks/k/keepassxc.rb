@@ -1,9 +1,9 @@
 cask "keepassxc" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2.7.7"
-  sha256 arm:   "8681540627d03f70f683dc5acd79af8f42bba21425ffaf352c79eb5c31fb9712",
-         intel: "8e3a5d93a749569515604241ed21512f689d60c32fa1ed85f57f69042896b655"
+  version "2.7.9"
+  sha256 arm:   "66259a7c020c60a6e842ed8a263b1aea0c5b43c894497d03576266fda9c1f577",
+         intel: "a10c5bf17a8107dcae9d19a36a06f5ef7b1cf4ee88046a16cc1073dc84c7f45e"
 
   url "https://github.com/keepassxreboot/keepassxc/releases/download/#{version}/KeePassXC-#{version}-#{arch}.dmg",
       verified: "github.com/keepassxreboot/keepassxc/"
@@ -16,7 +16,7 @@ cask "keepassxc" do
     strategy :github_latest
   end
 
-  conflicts_with cask: "keepassxc-beta"
+  conflicts_with cask: "keepassxc@beta"
   depends_on macos: ">= :high_sierra"
 
   app "KeePassXC.app"

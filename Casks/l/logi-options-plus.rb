@@ -1,5 +1,5 @@
 cask "logi-options-plus" do
-  version "1.68.542186"
+  version "1.76.583666"
   sha256 :no_check
 
   url "https://download01.logi.com/web/ftp/pub/techsupport/optionsplus/logioptionsplus_installer.zip",
@@ -34,6 +34,7 @@ cask "logi-options-plus" do
               "com.logi.optionsplus.driverhost",
               "com.logi.optionsplus.updater",
               "com.logitech.FirmwareUpdateTool",
+              "com.logitech.logiaipromptbuilder",
             ],
             delete:    [
               "/Applications/logioptionsplus.app",
@@ -45,6 +46,7 @@ cask "logi-options-plus" do
   zap trash: [
     "/Users/Shared/logi",
     "/Users/Shared/LogiOptionsPlus",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.logi.optionsplus*.sfl*",
     "~/Library/Application Support/LogiOptionsPlus",
     "~/Library/Preferences/com.logi.cp-dev-mgr.plist",
     "~/Library/Preferences/com.logi.optionsplus.driverhost.plist",

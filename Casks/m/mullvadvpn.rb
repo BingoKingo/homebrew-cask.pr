@@ -1,6 +1,6 @@
 cask "mullvadvpn" do
-  version "2024.1"
-  sha256 "08e537cc65b9c79f7f02759fada5b664cbeee7b45d3d931a0c97013282f2d9b1"
+  version "2024.3"
+  sha256 "bdbbde58d91a57fe783813e4082c6190527ef979b0818dd66d5e594de3598343"
 
   url "https://github.com/mullvad/mullvadvpn-app/releases/download/#{version}/MullvadVPN-#{version}.pkg",
       verified: "github.com/mullvad/mullvadvpn-app/"
@@ -13,7 +13,7 @@ cask "mullvadvpn" do
     strategy :header_match
   end
 
-  conflicts_with cask: "mullvadvpn-beta"
+  conflicts_with cask: "mullvadvpn@beta"
   depends_on macos: ">= :big_sur"
 
   pkg "MullvadVPN-#{version}.pkg"

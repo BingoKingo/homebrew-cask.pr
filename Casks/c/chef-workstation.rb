@@ -3,9 +3,9 @@ cask "chef-workstation" do
 
   macos_version = "11"
 
-  version "24.2.1058"
-  sha256 arm:   "7a30b8c5b140e3ce9812988504a455e0317b1415fcec09d0735970fc17c8423d",
-         intel: "2d8471c0ac3a4063a4508029237f640ff3df81043adc289b3a706789ef3672ad"
+  version "24.6.1066"
+  sha256 arm:   "bb63f4ba1f147dcf51cfbd4a6189f5f2a5c183e6d8823d050bf814a15e039893",
+         intel: "6f9922c33f70c3aef038f1bbdd950235726bf38f103b5f31f615d9af45d949db"
 
   url "https://packages.chef.io/files/stable/chef-workstation/#{version}/mac_os_x/#{macos_version}/chef-workstation-#{version}-1.#{arch}.dmg"
   name "Chef Workstation"

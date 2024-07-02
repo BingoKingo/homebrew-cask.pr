@@ -1,6 +1,6 @@
 cask "virtual-desktop-streamer" do
-  version "1.30.4"
-  sha256 "0feb504c3afdb15d8460bd585194f90104d1912cf651ed0c2d887fc72fe62aca"
+  version "1.32.5"
+  sha256 "99dcb91cf349220ed576a18ee8222284c0e0b4e6239ea2b56ce5499c0cc523ab"
 
   url "https://github.com/guygodin/VirtualDesktop/releases/download/v#{version}/VirtualDesktop.Streamer.Setup.dmg",
       verified: "github.com/guygodin/VirtualDesktop/"
@@ -40,7 +40,11 @@ cask "virtual-desktop-streamer" do
               "com.VirtualDesktop.VirtualDesktop",
               "com.VirtualDesktop.VirtualDesktopUpdater",
             ],
-            delete:    "/usr/local/bin/virtualdesktop/"
+            delete:    [
+              "/Applications/Virtual Desktop Streamer.app",
+              "/Applications/Virtual Desktop Updater.app",
+              "/usr/local/bin/virtualdesktop/",
+            ]
 
   zap trash: [
     "/tmp/.vdready",

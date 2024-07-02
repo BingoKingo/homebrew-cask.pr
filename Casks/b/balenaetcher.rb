@@ -1,8 +1,11 @@
 cask "balenaetcher" do
-  version "1.18.11"
-  sha256 "251f403b79f53bbf7c558cb0b6ce085bd9d4f1fb7f70d96fdfc10ecbc493e70f"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://github.com/balena-io/etcher/releases/download/v#{version}/balenaEtcher-#{version}.dmg",
+  version "1.19.21"
+  sha256 arm:   "fa7aa1f41f2bb3aebf9e9a61b526dc3297f85f3cbd9eff8f5cb3c4d1e5200c9b",
+         intel: "028123c9b839574025d918ede39b9c62a1fa7a4fbb859e31fc538ab811a2db6f"
+
+  url "https://github.com/balena-io/etcher/releases/download/v#{version}/balenaEtcher-#{version}-#{arch}.dmg",
       verified: "github.com/balena-io/etcher/"
   name "Etcher"
   desc "Tool to flash OS images to SD cards & USB drives"
@@ -12,6 +15,8 @@ cask "balenaetcher" do
     url :url
     strategy :github_latest
   end
+
+  depends_on macos: ">= :catalina"
 
   app "balenaEtcher.app"
 

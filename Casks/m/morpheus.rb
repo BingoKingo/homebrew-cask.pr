@@ -8,12 +8,7 @@ cask "morpheus" do
   desc "Modelling environment for multi-cellular systems biology"
   homepage "https://morpheus.gitlab.io/"
 
-  livecheck do
-    url "https://imc.zih.tu-dresden.de/morpheus/packages/mac/"
-    regex(/href=.*?Morpheus[._-](\d+(?:\.\d+)*)\.dmg/i)
-  end
-
-  conflicts_with cask: "homebrew/cask-versions/morpheus-beta"
+  deprecate! date: "2024-04-15", because: :discontinued
 
   app "Morpheus.app"
 

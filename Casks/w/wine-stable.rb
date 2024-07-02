@@ -1,6 +1,6 @@
 cask "wine-stable" do
-  version "9.0"
-  sha256 "9b0356a2b840a06facd69bb77901fe7cfe1d424510afc319418a44984ee41136"
+  version "9.0_3"
+  sha256 "e352befbd159225d4ef7c45ad90ccc4efb9797bd4e842f99036a32e850d1b3de"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -15,9 +15,9 @@ cask "wine-stable" do
   # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    regex(/^v?(\d+(?:[._-]\d+)+)$/i)
     strategy :github_releases do |json, regex|
-      file_regex = /^wine-stable[._-].*?$/i
+      file_regex = /^wine[._-]stable[._-].*?$/i
 
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -32,8 +32,8 @@ cask "wine-stable" do
   end
 
   conflicts_with cask: [
-    "wine-devel",
-    "wine-staging",
+    "wine@devel",
+    "wine@staging",
   ]
   depends_on cask: "gstreamer-runtime"
   depends_on macos: ">= :catalina"
@@ -71,15 +71,7 @@ cask "wine-stable" do
         "~/.local/share/mime",
       ]
 
-  caveats <<~EOS
-    #{token} supports both 32-bit and 64-bit. It is compatible with an existing
-    32-bit wine prefix, but it will now default to 64-bit when you create a new
-    wine prefix. The architecture can be selected using the WINEARCH environment
-    variable which can be set to either win32 or win64.
-
-    To create a new pure 32-bit prefix, you can run:
-      $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
-
-    See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
-  EOS
+  caveats do
+    requires_rosetta
+  end
 end

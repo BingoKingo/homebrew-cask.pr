@@ -1,17 +1,18 @@
 cask "shift" do
   arch arm: "arm64", intel: "x64"
 
-  version "9.2.5.1070"
-  sha256 arm:   "0bcb9fe93b57aa4aa2213b4eacbe27bb9fa3a9f699e10fd435a983b808ecfd96",
-         intel: "fc8547e8d662d5e6b0155c9d30b4abd493574e2bd0f0229b6cb16906f230a1f9"
+  version "9.3.2.1093"
+  sha256 arm:   "d0824001cc946a7242323fea78c74e32ab1b7cbdf66ebdb88fbc3e54c9f733cd",
+         intel: "8fdbb28fe0fe484cb688b7fa2fffc0a46a91ecf89557d98f1227b846553ed782"
 
-  url "https://updates.tryshift.com/v#{version.major_minor_patch}/stable/shift-v#{version}-stable-#{arch}.dmg"
+  url "https://updates.tryshift.com/v#{version.major_minor_patch}/stable/shift-v#{version}-stable-#{arch}.dmg",
+      verified: "updates.tryshift.com/"
   name "Shift"
   desc "Workstation to streamline your accounts, apps, and workflows"
-  homepage "https://tryshift.com/"
+  homepage "https://shift.com/"
 
   livecheck do
-    url "https://tryshift.com/download/?platform=mac"
+    url "https://shift.com/download/?platform=mac"
     regex(/href=.*?(\d+(?:[._-]\d+)+)[._-]stable.*?\.dmg/i)
   end
 

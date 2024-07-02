@@ -1,6 +1,6 @@
 cask "elephas" do
-  version "9.07"
-  sha256 "fe49c39b9b2fe2d85fb1c1ede4c18579093f802852cf0f097cfe31fa11d9d55f"
+  version "9.27"
+  sha256 "d1e577671d3648e4e075a08e3b67b797a78671afa492e2adab14ab115761a3f8"
 
   url "https://assets.elephas.app/Elephas_#{version.no_dots}.dmg"
   name "Elephas"
@@ -12,7 +12,7 @@ cask "elephas" do
     strategy :sparkle
   end
 
-  conflicts_with cask: "homebrew/cask-versions/elephas-beta"
+  conflicts_with cask: "elephas@beta"
   depends_on macos: ">= :monterey"
 
   app "Elephas.app"

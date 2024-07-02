@@ -1,6 +1,6 @@
 cask "hapigo" do
-  version "2.12.0"
-  sha256 "e80bf8ab2b5c05194278b54488232ef830d18cfe15921e921dc91955753051a8"
+  version "2.13.0"
+  sha256 "66a92fb64da32c20791c9aacc3233379a64a6741236217aae92b9108ade0271d"
 
   url "https://dl.hapigo.com/HapiGo_#{version}.dmg"
   name "HapiGo"
@@ -9,7 +9,9 @@ cask "hapigo" do
 
   livecheck do
     url "https://hapigo.com/update/cast.plist"
-    regex(%r{<key>version</key>\s*\n\s*<string>(\d+(?:\.\d+)+)</string>}i)
+    strategy :xml do |xml|
+      xml.get_elements("//key[text()='version']").map { |item| item.next_element&.text&.strip }
+    end
   end
 
   auto_updates true

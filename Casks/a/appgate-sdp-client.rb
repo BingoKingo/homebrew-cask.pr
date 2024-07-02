@@ -1,16 +1,15 @@
 cask "appgate-sdp-client" do
   on_mojave :or_older do
-    version "5.4.3"
-    sha256 "cb40c9dbfc1c6df1c611d9538ce22447cf234945a15ccf5acc7c09b877bc4137"
+    version "5.4.4"
+    sha256 "d9d0ffbaf628ee0b8e2d3457dc7b82d1a65ce34952d1f5edc4c4bf407a3d0f1b"
 
     livecheck do
-      url "https://www.appgate.com/support/software-defined-perimeter-support/sdp-v5-4"
-      regex(%r{href=.*?/Appgate[._-]SDP[._-]v?(\d+(?:\.\d+)+)[._-]Installer\.dmg}i)
+      skip "Legacy version"
     end
   end
   on_catalina do
-    version "6.0.3"
-    sha256 "ff8f7f3f2f934d935ec3353ab8ca544e8b0a2ccd3a608bc16fe3f5ed8b935bf9"
+    version "6.0.4"
+    sha256 "bceed509db9fd8dab10f31686264ff7f073048d78470f85f06bbd6233eb9b111"
 
     livecheck do
       url "https://www.appgate.com/support/software-defined-perimeter-support/sdp-v6-0"
@@ -18,8 +17,8 @@ cask "appgate-sdp-client" do
     end
   end
   on_big_sur :or_newer do
-    version "6.3.0"
-    sha256 "864df348fcbe28e5444efdb1ee5ef73dbc8d9aaa3278580619f0a884a671a200"
+    version "6.3.1"
+    sha256 "7c01283fbf9b69498cd4fcb2d2c137296dc8ba1c0ab67f605c1cf1e5320c90bc"
 
     livecheck do
       url :homepage

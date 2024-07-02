@@ -1,12 +1,12 @@
 cask "focusrite-control-2" do
   # NOTE: "2" is not a version number, but an intrinsic part of the product name
-  version "1.190.0.19132"
-  sha256 "c1bef2cb8eccffa91df9bb85065c68b96e429f5e8327b515abe0de01d8f7d411"
+  version "1.273.0.21136"
+  sha256 "c8310bee7a788b18410824841a5b674a13f4b6f48f4897f7251940b351ac1afd"
 
   url "https://releases.focusrite.com/com.focusrite.focusrite-control/release/Focusrite-Control-2-#{version}.dmg"
   name "Focusrite Control 2"
   desc "Focusrite interface controller for devices of the 4th generation and newer"
-  homepage "https://focusrite.com/en"
+  homepage "https://focusrite.com/software/focusrite-control-2"
 
   livecheck do
     url "https://releases.focusrite.com/com.focusrite.focusrite-control/release/focusrite-control.release.mac.xml"
@@ -14,7 +14,7 @@ cask "focusrite-control-2" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :monterey"
 
   app "Focusrite Control 2.app"
 

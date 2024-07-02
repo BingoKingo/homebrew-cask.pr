@@ -1,6 +1,6 @@
 cask "unity-windows-support-for-editor" do
-  version "2023.2.16f1,7f45223012db"
-  sha256 "f716ebeef99ed0b02fd4ca26eb9da48f6825c5b80d07a9be35294231b612deea"
+  version "2023.2.20f1,0e25a174756c"
+  sha256 "ddb913827886eb914ae07afaf8b802c70d669c1864bc6ddfbb02e65629864372"
 
   url "https://download.unity3d.com/download_unity/#{version.csv.second}/MacEditorTargetInstaller/UnitySetup-Windows-Mono-Support-for-Editor-#{version.csv.first}.pkg",
       verified: "download.unity3d.com/download_unity/"
@@ -9,14 +9,7 @@ cask "unity-windows-support-for-editor" do
   homepage "https://unity.com/products"
 
   livecheck do
-    url "https://public-cdn.cloud.unity3d.com/hub/prod/releases-darwin.json"
-    regex(%r{
-        /download_unity/(\h+)/MacEditorTargetInstaller
-        /UnitySetup-Windows-Mono-Support-for-Editor-(\d+(?:\.\d+)+[a-z]*\d*)\.pkg
-      }ix)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match[1]},#{match[0]}" }
-    end
+    cask "unity"
   end
 
   depends_on cask: "unity"

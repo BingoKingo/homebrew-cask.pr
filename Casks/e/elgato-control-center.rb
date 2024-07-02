@@ -1,6 +1,6 @@
 cask "elgato-control-center" do
-  version "1.5.20289"
-  sha256 "af12ee122b9247c89257e747765ab9d5cb3316a085e9e415ec7ba547c927fadf"
+  version "1.7.20497"
+  sha256 "83931b9b7c9796b16547bb6afa7d016ffe4098020cfc75845631b79bf69a572c"
 
   url "https://edge.elgato.com/egc/macos/eccm/#{version.major_minor}/ElgatoControlCenter-#{version}.app.zip"
   name "Elgato Control Center"

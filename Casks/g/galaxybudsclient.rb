@@ -1,18 +1,18 @@
 cask "galaxybudsclient" do
   arch arm: "arm64", intel: "x64"
 
-  version "4.6.0"
-  sha256 arm:   "be1d12605ae486fe1713fd8afcb977a2e0b13ae836aeb60bd19cfe8c4c49faec",
-         intel: "780f14421ab6986cf88394151cd1d20f491613b7c23721d7803856b5aa53c8eb"
+  version "5.0.1"
+  sha256 arm:   "052c31062af7854cc60191df78fd19a7da99c67d30feb712f560367d2162857f",
+         intel: "4228910f96ed2fe9e8317e8248de39917ff087f3b6c68b1395164dbb476c60c7"
 
-  url "https://github.com/ThePBone/GalaxyBudsClient/releases/download/#{version}/GalaxyBudsClient_macOS-#{arch}.pkg"
+  url "https://github.com/ThePBone/GalaxyBudsClient/releases/download/#{version}/GalaxyBudsClient_macOS_#{arch}.pkg"
   name "GalaxyBudsClient"
   desc "Unofficial manager for the Buds, Buds+, Buds Live and Buds Pro"
   homepage "https://github.com/ThePBone/GalaxyBudsClient"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :monterey"
 
-  pkg "GalaxyBudsClient_macOS-#{arch}.pkg"
+  pkg "GalaxyBudsClient_macOS_#{arch}.pkg"
 
   uninstall pkgutil: "me.timschneeberger.galaxybudsclient"
 

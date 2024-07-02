@@ -1,6 +1,6 @@
 cask "motu-m-series" do
-  version "93305"
-  sha256 "4936d5ecb335dad01c473d4d588420acb044a75434c5bf939c94ba6edd1fb7d8"
+  version "95678"
+  sha256 "99bef4e47447a9f1eae9db85ce8282d36e9de4ea32717dabf77fd5678a7ba02a"
 
   url "https://cdn-data.motu.com/downloads/audio/mseries/driver/RC/MOTU%20MSeries%20Installer%20(#{version}).pkg"
   name "Motu M-Series"
@@ -9,7 +9,7 @@ cask "motu-m-series" do
 
   livecheck do
     url :homepage
-    regex(/<h2[^>]*?>.*?motu\s?m-series\s?installer.*?\s*?<p[^>]*?>.*?version.*?(\d+(?:\.\d+)*).*?</i)
+    regex(/<span[^>]*?>Mac\s*v?(\d+(?:\.\d+)*)</i)
   end
 
   depends_on macos: ">= :mojave"

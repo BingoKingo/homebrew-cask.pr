@@ -1,6 +1,6 @@
 cask "lidarr" do
-  version "2.1.7.4030"
-  sha256 "5151b61125d0ab1a01d66c1572fab34e8f3623b3099163f0d4cdc8e0c9897246"
+  version "2.3.3.4204"
+  sha256 "54bd465130edf1d42fc08d37f1ece641166054c9190ee03e6cf9894c6adee790"
 
   url "https://github.com/lidarr/Lidarr/releases/download/v#{version}/Lidarr.master.#{version}.osx-app-core-x64.zip",
       verified: "github.com/lidarr/Lidarr/"
