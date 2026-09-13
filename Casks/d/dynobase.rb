@@ -1,9 +1,9 @@
 cask "dynobase" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.0.1,260912plhc4gdul"
-  sha256 arm:   "de61bed0e807429598363e6cec9c7a69923f532e4aa59e6526946bb5f296edd4",
-         intel: "0ef3450164315a8b4fb8fe6ca8ff2e17fa0de7280f992ef657e30af58cae14e9"
+  version "3.0.2,260912yvpkpp635"
+  sha256 arm:   "be5008a895eae2641bbf63257e4b27586b5660d49b77cfb90b1191bdda67c689",
+         intel: "518370cd9b6ed659af06394e3168387dd6ba7d02ab100b9669746a9c6ce1aaca"
 
   url "https://download.todesktop.com/220811zswf4aj4x/Dynobase%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg"
   name "Dynobase"
